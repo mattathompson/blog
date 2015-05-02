@@ -1,0 +1,29 @@
+nav.top-bar data-topbar="" role="navigation"
+  ul.title-area
+    li.name
+      h1
+        a href="#" Three Peas In a Pod
+    /! Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+    li.toggle-topbar.menu-icon
+      a href="#"
+        span Menu
+  section.top-bar-section
+    /! Right Nav Section
+    ul.right
+      li.active
+        a href="#"  Right Button Active
+      li.has-dropdown
+        a href="#"  Right Button Dropdown
+        ul.dropdown
+          li
+            a href="#"  First link in dropdown
+          li.active
+            a href="#"  Active link in dropdown
+    /! Left Nav Section
+    ul.left
+      li.has-form
+        .row.collapse
+          .large-8.small-9.columns
+            input placeholder=("Search Blog") type="text" /
+          .large-4.small-3.columns
+            a.alert.button.expand href="#"  Search
