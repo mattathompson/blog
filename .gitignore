@@ -7,11 +7,25 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
+# Ignore sensitive credentials
+/config/database.yml
+
+# Ignore all database stuff, this app does not have its own database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+/db/migrations
+
+# Assets
+/public/assets
+/public/assets/*
+/public/assets.tar.gz
+/public.tar.gz
 
 # Ignore all logfiles and tempfiles.
-/log/*
-!/log/.keep
+/log/*.log
 /tmp
+.DS_Store
+
+# No committing the database config!
+/config/database.yml
+/config/application.yml

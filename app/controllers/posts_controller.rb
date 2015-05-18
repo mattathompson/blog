@@ -9,6 +9,16 @@ class PostsController < ApplicationController
   end
 
 
+  def update
+    @post = Post.find params[:id]
+    @post.update_attributes post_params
+    if @post.save
+      redirect_to @post
+    else
+      redirect_to :back
+    end
+  end
+
   def create
     @post = Post.new post_params
     if @post.save

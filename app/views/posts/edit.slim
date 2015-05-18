@@ -1,0 +1,19 @@
+.small-12.medium-8.columns.small-centered.medium-centered
+  br
+  br
+  h1 Edit Post
+  = form_for(@post) do |f|
+
+    =f.label :title
+    =f.text_field :title
+
+    =f.label :body
+    =f.text_area :body, rows: "8"
+
+    =f.label :tags
+    =f.text_field :tags
+
+    =f.label :pub_date, "Publish Date"
+    =f.date_field :pub_date
+
+    =f.submit "Update Post"

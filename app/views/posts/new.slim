@@ -1,13 +1,34 @@
-h1 Create New Post
-= form_for(@post) do |f|
+= tinymce_assets
+= tinymce
+.small-12.medium-8.columns.small-centered.medium-centered
+  br
+  br
+  h1 Create New Post
+  = form_for(@post, :html => {:multipart => true} ) do |f|
 
-  =f.label :title
-  =f.text_field :title
+    =f.label :title
+    =f.text_field :title
 
-  =f.label :body
-  =f.text_area :body
+    =f.label :body
+    =f.text_area :body, rows: "8", class: "tinymce"
 
-  =f.label :tags
-  =f.text_field :tags
+    =f.label :tags
+    =f.text_field :tags
 
-  =f.submit "Create Post"
+    =f.label :pub_date, "Publish Date"
+    =f.date_field :pub_date
+
+    =f.submit "Create Post"
+
+javascript:
+  $("document:ready", function() {
+    $(".tinymce").tinymce({
+      theme: "modern",
+      toolbar: "bold,italic,underline,|,bullist,numlist,outdent,indent,|,undo,redo,|,pastetext,pasteword,selectall,|,uploadimage,link,code",
+      pagebreak_separator: "<p class='page-separator'>&nbsp;</p>",
+      plugins: ["uploadimage", "link", "code"],
+      uploadimage_form_url: "/tinymce_assets",
+      relative_urls: false,
+      remove_script_host: false
+    })
+  });

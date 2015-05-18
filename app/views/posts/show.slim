@@ -1,0 +1,8 @@
+.small-12.columns
+  h1 = @post.title
+  - if current_user
+    span.right
+      = link_to "Edit", edit_post_path(@post), class: "button small"
+  p = @post.pub_date
+  h4 = @post.tags
+  p = simple_format(@post.body)
