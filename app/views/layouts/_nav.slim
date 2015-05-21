@@ -1,9 +1,8 @@
 nav.top-bar data-topbar="" role="navigation"
   ul.title-area
-    - if current_user
-      li.name
-        h1
-          a href="#" Admin
+    li.name
+      h1
+        a href="#" Admin
     /! Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
     li.toggle-topbar.menu-icon
       a href="#"
@@ -14,13 +13,12 @@ nav.top-bar data-topbar="" role="navigation"
       li.active
         a href="/"  View All Posts
       li.has-dropdown
-        - if current_user
-          a href="#"  Admin Dropdown
-          ul.dropdown
-            li
-              a href="/posts/new"  Create New Post
-            li
-              a href="/posts"  Manage Existing Posts
+        a href="#"  Admin Dropdown
+        ul.dropdown
+          li
+            a href="/posts/new"  Create New Post
+          li
+            a href="/posts"  Manage Existing Posts
     /! Left Nav Section
     ul.left
       li.has-form

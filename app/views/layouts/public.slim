@@ -1,0 +1,16 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta content="width=device-width, initial-scale=1.0" name="viewport"
+    title
+      =content_for?(:title) ? yield(:title) : "foundation-rails"
+    = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "application"
+    <script src="//use.typekit.net/gif6roa.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+    = csrf_meta_tags
+  body
+    .row
+      .small-12.columns.small-centered
+        = yield

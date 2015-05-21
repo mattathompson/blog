@@ -34,6 +34,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'figaro'
 gem 'pg'
 
+
 group :production do
   gem 'rails_12factor'
 end
