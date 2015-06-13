@@ -13,10 +13,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find params[:id]
     @post.update_attributes post_params
+    binding.pry
     if @post.save
       redirect_to @post
     else
-      redirect_to :back
+      redirect_to new_post_path, notice: @post.errors
     end
   end
 
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     else
-      redirect_to :back
+      redirect_to new_post_path, notice: @post.errors
     end
   end
 
