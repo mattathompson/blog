@@ -1,0 +1,19 @@
+<div id="features-wrapper">
+  <section id="features" class="container">
+    <header>
+      <h2><strong>Recent Posts</strong></h2>
+    </header>
+    <div class="row">
+      <% @featured_posts.each do |post|%>
+        <div class="4u 12u(mobile)">
+          <!-- Feature -->
+            <section>
+              <a href="#" class="image featured"><%= image_tag post.main_image.url :medium  %></a>
+              <header>
+                <h3><%= post.title %></h3>
+              </header>
+              <p><%= strip_tags(post.body).truncate(250) %></p>
+            </section>
+        </div>
+      <% end %>
+    </div>

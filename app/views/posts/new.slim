@@ -1,13 +1,16 @@
-= tinymce_assets
-= tinymce
 .small-12.medium-8.columns.small-centered.medium-centered
   br
   br
   h1 Create New Post
   = form_for(@post, :html => {:multipart => true} ) do |f|
+    .row
+      .large-6.columns.small-12
+        =f.label :title
+        =f.text_field :title
 
-    =f.label :title
-    =f.text_field :title
+      .large-6.columns.small-12
+        =f.label :main_image
+        =f.file_field :main_image
 
     =f.label :body
     =f.text_area :body, rows: "8", class: "tinymce"
@@ -21,7 +24,7 @@
     =f.submit "Create Post"
 br
 br
-  
+
 javascript:
   $("document:ready", function() {
     $(".tinymce").tinymce({

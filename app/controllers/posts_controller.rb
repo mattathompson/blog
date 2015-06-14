@@ -13,7 +13,6 @@ class PostsController < ApplicationController
   def update
     @post = Post.find params[:id]
     @post.update_attributes post_params
-    binding.pry
     if @post.save
       redirect_to @post
     else
@@ -43,7 +42,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params[:post].permit(:title, :body, :tags, :pub_date)
+    params[:post].permit(:title, :body, :tags, :pub_date, :main_image)
   end
 
 end

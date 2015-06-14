@@ -64,29 +64,9 @@
 				</div>
 
 			<!-- Features -->
-				<div id="features-wrapper">
-					<section id="features" class="container">
-						<header>
-							<h2><strong>Recent Posts</strong></h2>
-						</header>
-						<div class="row">
-							<% @featured_posts.each do |post|%>
-								<div class="4u 12u(mobile)">
-									<!-- Feature -->
-										<section>
-											<a href="#" class="image featured"><%= image_tag "pic01.jpg"  %></a>
-											<header>
-												<h3><%= post.title %></h3>
-											</header>
-											<p>This is <strong>Strongly Typed</strong>, a free, fully responsive site template
-											by <a href="http://html5up.net">HTML5 UP</a>. Free for personal and commercial use under the
-											<a href="http://html5up.net/license">CCA 3.0 license</a>.</p>
-										</section>
-								</div>
-							<% end %>
-						</div>
+						<%= render 'layouts/features' %>
 						<ul class="actions">
-							<li><a href="#" class="button icon fa-file">Tell Me More</a></li>
+							<li><a href="#" class="button icon fa-file">View All Posts</a></li>
 						</ul>
 					</section>
 				</div>

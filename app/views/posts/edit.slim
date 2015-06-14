@@ -1,13 +1,16 @@
-= tinymce_assets
-= tinymce
 .small-12.medium-8.columns.small-centered.medium-centered
   br
   br
   h1 Edit Post
-  = form_for(@post) do |f|
+  = form_for(@post, { multipart: true }) do |f|
+    .row
+      .large-6.columns.small-12
+        =f.label :title
+        =f.text_field :title
 
-    =f.label :title
-    =f.text_field :title
+      .large-6.columns.small-12
+        =f.label :main_image
+        =f.file_field :main_image
 
     =f.label :body
     =f.text_area :body, rows: "8", class: "tinymce"
