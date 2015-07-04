@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @featured_posts = Post.featured
+    @sidebar_posts  = Post.sidebar
   end
 
 

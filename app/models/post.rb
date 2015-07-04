@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   validates_presence_of :body, :title, :pub_date, :tags
-  scope :featured, -> { order('pub_date DESC').limit(3) }
+  scope :featured,  -> { where(featured: true ).limit(3) }
+  scope :sidebar,   -> { where(sidebar: true).limit(3) }
 
   has_attached_file :main_image,
     :styles => {
