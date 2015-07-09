@@ -9,3 +9,36 @@ ul.large-block-grid-3.small-block-grid-1
         h3= link_to post.title, post_path(post)
         p= post.pub_date
         p= strip_tags(post.body).truncate(150)
+= paginate @posts
+
+- if @featured_posts
+  hr
+
+  h1 Featured Posts
+  hr
+  ul.large-block-grid-3.small-block-grid-1
+    - @featured_posts.each do |post|
+      li
+        .panel
+          span.right
+            = link_to "Edit", edit_post_path(post)
+          h3= link_to post.title, post_path(post)
+          p= post.pub_date
+          p= strip_tags(post.body).truncate(150)
+  = paginate @posts
+
+  - if @sidebar_posts
+    hr
+
+    h1 Sidebar Posts
+    hr
+    ul.large-block-grid-3.small-block-grid-1
+      - @featured_posts.each do |post|
+        li
+          .panel
+            span.right
+              = link_to "Edit", edit_post_path(post)
+            h3= link_to post.title, post_path(post)
+            p= post.pub_date
+            p= strip_tags(post.body).truncate(150)
+    = paginate @posts

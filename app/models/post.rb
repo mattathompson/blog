@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  paginates_per 10
+
   validates_presence_of :body, :title, :pub_date, :tags
   scope :featured,  -> { where(featured: true ).limit(3) }
   scope :sidebar,   -> { where(sidebar: true).limit(3) }
@@ -11,5 +13,16 @@ class Post < ActiveRecord::Base
     :default_url => "/images/:style/missing.png"
 
   validates_attachment_content_type :main_image, :content_type => /\Aimage\/.*\Z/
+
+
+  def status
+    if draft
+      "Draft"
+    elsif pub_date > DateTime.now
+      "Awating Publish Date"
+    else
+      "Published"
+    end
+  end
 
 end

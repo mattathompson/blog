@@ -8,7 +8,7 @@
       .large-6.columns.small-12
         =f.label :title
         =f.text_field :title
-        
+
         =f.label :main_image
         =f.file_field :main_image
 
@@ -18,10 +18,30 @@
     =f.label :tags
     =f.text_field :tags
 
-    =f.label :pub_date, "Publish Date"
-    =f.date_field :pub_date
+    br
 
-    =f.submit "Update Post"
+    .row
+      .large-7.columns.small-12
+        = f.label :draft
+          span= "Draft:  "
+          = f.check_box :draft
+
+        = f.label :featured
+          span= "Featured:  "
+          = f.check_box :featured
+
+        = f.label :sidebar
+          span= "Sidebar:  "
+          = f.check_box :sidebar
+          
+      .large-5.columns.small-12
+        =f.label :pub_date, "Publish Date"
+        =f.date_field :pub_date
+
+
+
+
+    = f.submit "Update Post", class: "button secondary small"
 
 javascript:
   $("document:ready", function() {

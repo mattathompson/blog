@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   layout 'application'
   before_action :authenticate_user!
   def index
-    @posts = Post.all
+    @posts = Post.order(:created_at).page params[:page]
   end
 
   def show
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params[:post].permit(:title, :body, :tags, :pub_date, :main_image)
+    params[:post].permit(:title, :body, :tags, :pub_date, :main_image, :draft)
   end
 
 end
