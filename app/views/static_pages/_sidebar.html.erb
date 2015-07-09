@@ -5,7 +5,7 @@
             <article class="box excerpt">
               <header>
                 <span class="date"><%= post.pub_date %></span>
-                <h3><a href="#"><%= post.title %></a></h3>
+                <h3><%= link_to post.title, public_show_path(post.slug) %></h3>
               </header>
               <p><%= strip_tags(post.body).truncate(200) %></p>
             </article>

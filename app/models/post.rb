@@ -1,7 +1,9 @@
 class Post < ActiveRecord::Base
   paginates_per 10
   extend FriendlyId
-  friendly_id :title, use: [:slugged, :history] 
+  friendly_id :title, use: [:slugged, :history]
+
+  belongs_to :category
 
   validates_presence_of :body, :title, :pub_date, :tags
   scope :featured,  -> { where(featured: true ).where("pub_date < ?", DateTime.now).limit(3) }
