@@ -1,16 +1,20 @@
 .small-12.medium-8.columns.small-centered.medium-centered
   br
   br
-  h1 Create New Post
-  = form_for(@post, :html => {:multipart => true} ) do |f|
+  h1 Edit Post
+  = link_to "Delete", admin_post_path(@post), method: :delete, class: "button right small alert"
+  = form_for([:admin, @post], { multipart: true }) do |f|
     .row
       .large-6.columns.small-12
         =f.label :title
         =f.text_field :title
 
-      .large-6.columns.small-12
         =f.label :main_image
         =f.file_field :main_image
+
+      .large-6.columns.small-12
+        =f.label :category, "Category"
+        =f.collection_select :category_id, @categories, :id, :name
 
     =f.label :body
     =f.text_area :body, rows: "8", class: "tinymce"
@@ -18,12 +22,30 @@
     =f.label :tags
     =f.text_field :tags
 
-    =f.label :pub_date, "Publish Date"
-    =f.date_field :pub_date
+    br
 
-    =f.submit "Create Post"
-br
-br
+    .row
+      .large-7.columns.small-12
+        = f.label :draft
+          span= "Draft:  "
+          = f.check_box :draft
+
+        = f.label :featured
+          span= "Featured:  "
+          = f.check_box :featured
+
+        = f.label :sidebar
+          span= "Sidebar:  "
+          = f.check_box :sidebar
+
+      .large-5.columns.small-12
+        =f.label :pub_date, "Publish Date"
+        =f.date_field :pub_date
+
+
+
+
+    = f.submit "Update Post", class: "button secondary small"
 
 javascript:
   $("document:ready", function() {

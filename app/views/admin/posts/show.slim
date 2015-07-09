@@ -2,7 +2,7 @@
   h1 = @post.title
   - if current_user
     span.right
-      = link_to "Edit", edit_post_path(@post), class: "button small"
+      = link_to "Edit", edit_admin_post_path(@post), class: "button small"
 
   h6 = "Status: " + @post.status
   h6 = "Published Date: " + @post.pub_date.to_s

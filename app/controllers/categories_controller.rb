@@ -1,43 +1,12 @@
 class CategoriesController < ApplicationController
-
+  layout 'public'
   def show
-
+    @category = Category.friendly.find params[:id]
   end
 
 
   def index
-
-  end
-
-
-  def new
-    @category = Category.new
-  end
-
-
-  def create
-
-  end
-
-
-  def destroy
-
-  end
-
-
-  def edit
-
-  end
-
-
-  def update
-
-  end
-
-  private
-
-  def categories_params
-    params[:category].permit(:name, :description)
+    @categories = Category.all
   end
 
 end

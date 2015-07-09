@@ -1,9 +1,8 @@
 .small-12.medium-8.columns.small-centered.medium-centered
   br
   br
-  h1 Edit Post
-  = link_to "Delete", post_path(@post), method: :delete, class: "button right small alert"
-  = form_for(@post, { multipart: true }) do |f|
+  h1 Create New Post
+  = form_for(@post, :html => {:multipart => true} ) do |f|
     .row
       .large-6.columns.small-12
         =f.label :title
@@ -11,6 +10,10 @@
 
         =f.label :main_image
         =f.file_field :main_image
+
+      .large-6.columns.small-12
+        =f.label :category, "Category"
+        =f.collection_select :category_id, @categories, :id, :name
 
     =f.label :body
     =f.text_area :body, rows: "8", class: "tinymce"
@@ -33,15 +36,13 @@
         = f.label :sidebar
           span= "Sidebar:  "
           = f.check_box :sidebar
-          
+
       .large-5.columns.small-12
         =f.label :pub_date, "Publish Date"
         =f.date_field :pub_date
 
+    =f.submit "Create Post"
 
-
-
-    = f.submit "Update Post", class: "button secondary small"
 
 javascript:
   $("document:ready", function() {

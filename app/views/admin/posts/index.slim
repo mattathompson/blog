@@ -5,8 +5,8 @@ ul.large-block-grid-3.small-block-grid-1
     li
       .panel
         span.right
-          = link_to "Edit", edit_post_path(post)
-        h3= link_to post.title, post_path(post)
+          = link_to "Edit", edit_admin_post_path(post)
+        h3= link_to post.title, admin_post_path(post)
         p= post.pub_date
         p= strip_tags(post.body).truncate(150)
 = paginate @posts
@@ -21,8 +21,8 @@ ul.large-block-grid-3.small-block-grid-1
       li
         .panel
           span.right
-            = link_to "Edit", edit_post_path(post)
-          h3= link_to post.title, post_path(post)
+            = link_to "Edit", edit_admin_post_path(post)
+          h3= link_to post.title, admin_post_path(post)
           p= post.pub_date
           p= strip_tags(post.body).truncate(150)
   = paginate @posts
@@ -37,8 +37,8 @@ ul.large-block-grid-3.small-block-grid-1
         li
           .panel
             span.right
-              = link_to "Edit", edit_post_path(post)
-            h3= link_to post.title, post_path(post)
+              = link_to "Edit", edit_admin_post_path(post)
+            h3= link_to post.title, admin_post_path(post)
             p= post.pub_date
             p= strip_tags(post.body).truncate(150)
     = paginate @posts

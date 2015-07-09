@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,10 +8,11 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get '/:id' => 'static_pages#show', as: :public_show
-
-  resources :posts
-  resources :categories
-
+  resources :categories, only: [:index, :show ]
+  namespace :admin do
+    resources :posts
+    resources :categories
+  end
   post '/tinymce_assets', to: 'tinymce_assets#create'
 
   # Example of regular route:

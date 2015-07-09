@@ -1,4 +1,4 @@
-class TinymceAssetsController < ApplicationController
+class Admin::TinymceAssetsController < ApplicationController
   respond_to :json
 
   def create

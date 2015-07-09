@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Admin::PostsController < ApplicationController
   layout 'application'
   before_action :authenticate_user!
   def index
@@ -11,10 +11,10 @@ class PostsController < ApplicationController
 
 
   def update
-    @post = Post.find params[:id]
+    @post = Post.friendly.find params[:id]
     @post.update_attributes post_params
     if @post.save
-      redirect_to @post
+      redirect_to [:admin, @post]
     else
       redirect_to new_post_path, notice: @post.errors
     end
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new post_params
     if @post.save
-      redirect_to @post
+      redirect_to [:admin, @post]
     else
       redirect_to new_post_path, notice: @post.errors
     end
@@ -32,17 +32,19 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @categories = Category.all
   end
 
 
   def edit
-    @post = Post.find params[:id]
+    @post = Post.friendly.find params[:id]
+    @categories = Category.all
   end
 
   private
 
   def post_params
-    params[:post].permit(:title, :body, :tags, :pub_date, :main_image, :draft, :sidebar, :featured)
+    params[:post].permit(:title, :body, :tags, :pub_date, :main_image, :draft, :sidebar, :featured, :category_id)
   end
 
 end
