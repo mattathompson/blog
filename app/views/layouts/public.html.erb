@@ -23,6 +23,10 @@
 
 	</head>
 	<body class="homepage">
-		<%= yield %>
+		<div id="page-wrapper">
+			<%= render 'layouts/public_header'%>
+			<%= yield %>
+			<%= render 'layouts/public_footer'%>
+		</div>
 	</body>
 </html>
