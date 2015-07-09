@@ -8,4 +8,4 @@ ul.large-block-grid-3.small-block-grid-1
           = link_to "Edit", edit_post_path(post)
         h3= link_to post.title, post_path(post)
         p= post.pub_date
-        p= post.body.truncate(150)
+        p= strip_tags(post.body).truncate(150)

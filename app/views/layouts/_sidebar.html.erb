@@ -1,43 +1,15 @@
 <% @sidebar_posts.each do |post| %>
-  <ul class="divided">
-    <li>
-
-      <!-- Excerpt -->
-        <article class="box excerpt">
-          <header>
-            <span class="date">July 30</span>
-            <h3><a href="#">Just another post</a></h3>
-          </header>
-          <p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-          suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-        </article>
-
-    </li>
-    <li>
-
-      <!-- Excerpt -->
-        <article class="box excerpt">
-          <header>
-            <span class="date">July 28</span>
-            <h3><a href="#">And another post</a></h3>
-          </header>
-          <p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-          suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-        </article>
-
-    </li>
-    <li>
-
-      <!-- Excerpt -->
-        <article class="box excerpt">
-          <header>
-            <span class="date">July 24</span>
-            <h3><a href="#">One more post</a></h3>
-          </header>
-          <p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
-          suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
-        </article>
-
-    </li>
-  </ul>
+  <section>
+    <ul class="divided">
+        <li>
+            <article class="box excerpt">
+              <header>
+                <span class="date"><%= post.pub_date %></span>
+                <h3><a href="#"><%= post.title %></a></h3>
+              </header>
+              <p><%= strip_tags(post.body).truncate(100) %></p>
+            </article>
+        </li>
+    </ul>
+  </section>
 <% end %>

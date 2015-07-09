@@ -2,13 +2,13 @@
   br
   br
   h1 Edit Post
+  = link_to "Delete", post_path(@post), method: :delete, class: "button right small alert"
   = form_for(@post, { multipart: true }) do |f|
     .row
       .large-6.columns.small-12
         =f.label :title
         =f.text_field :title
-
-      .large-6.columns.small-12
+        
         =f.label :main_image
         =f.file_field :main_image
 
