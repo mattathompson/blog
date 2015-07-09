@@ -2,7 +2,7 @@
   br
   br
   h1 Create New Post
-  = form_for(@post, :html => {:multipart => true} ) do |f|
+  = form_for([:admin, @post], :html => {:multipart => true} ) do |f|
     .row
       .large-6.columns.small-12
         =f.label :title
