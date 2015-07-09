@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params[:post].permit(:title, :body, :tags, :pub_date, :main_image, :draft)
+    params[:post].permit(:title, :body, :tags, :pub_date, :main_image, :draft, :sidebar, :featured)
   end
 
 end

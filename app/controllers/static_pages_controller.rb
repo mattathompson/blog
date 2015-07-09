@@ -6,6 +6,10 @@ class StaticPagesController < ApplicationController
     @sidebar_posts  = Post.sidebar
   end
 
+  def show
+
+  end
+
 
 
 

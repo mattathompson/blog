@@ -2,8 +2,10 @@ class Post < ActiveRecord::Base
   paginates_per 10
 
   validates_presence_of :body, :title, :pub_date, :tags
-  scope :featured,  -> { where(featured: true ).limit(3) }
-  scope :sidebar,   -> { where(sidebar: true).limit(3) }
+  scope :featured,  -> { where(featured: true ).where("pub_date < ?", DateTime.now).limit(3) }
+  scope :sidebar,   -> { where(sidebar: true ).where("pub_date < ?", DateTime.now).limit(3) }
+  scope :published, -> { where('pub_date < ?', DateTime.now) }
+  scope :pending,   -> { where('pub_date > ?', DateTime.now) }
 
   has_attached_file :main_image,
     :styles => {
