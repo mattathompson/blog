@@ -8,7 +8,9 @@
         <div class="4u 12u(mobile)">
           <!-- Feature -->
             <section>
-              <a href="#" class="image featured"><%= image_tag post.main_image.url :medium  %></a>
+              <%= link_to public_show_path(post.slug), class: "image featured" do %>
+                <%= image_tag post.main_image.url :medium  %>
+              <% end %>
               <header>
                 <h3><%= post.title %></h3>
               </header>
