@@ -41,6 +41,15 @@ class Admin::PostsController < ApplicationController
     @categories = Category.all
   end
 
+  def destroy
+    @post = Post.friendly.find params[:id]
+    if @post.delete
+      redirect_to admin_posts_path
+    else
+      redirect_to :back, notice: "Something went wrong."
+    end
+  end
+
   private
 
   def post_params
