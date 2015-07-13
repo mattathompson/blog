@@ -6,10 +6,10 @@ class Post < ActiveRecord::Base
   belongs_to :category
 
   validates_presence_of :body, :title, :pub_date, :tags
-  scope :featured,  -> { where(featured: true ).where("pub_date < ?", DateTime.now).limit(3) }
-  scope :sidebar,   -> { where(sidebar: true ).where("pub_date < ?", DateTime.now).limit(3) }
-  scope :published, -> { where('pub_date < ?', DateTime.now) }
-  scope :pending,   -> { where('pub_date > ?', DateTime.now) }
+  scope :featured,  -> { where(featured: true ).where("pub_date < ?", DateTime.now).limit(3).where(draft: false) }
+  scope :sidebar,   -> { where(sidebar: true ).where("pub_date < ?", DateTime.now).limit(3).where(draft: false) }
+  scope :published, -> { where('pub_date < ?', DateTime.now).where(draft: false) }
+  scope :pending,   -> { where('pub_date > ?', DateTime.now).where(draft: false) }
 
   has_attached_file :main_image,
     :styles => {
