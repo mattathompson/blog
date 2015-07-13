@@ -10,7 +10,7 @@
         <ul>
           <li><a class="icon fa-home" href="/"><span>Home</span></a></li>
           <li>
-            <a href="#" class="icon fa-sitemap"><span>Dropdown</span></a>
+            <a href="#" class="icon fa-sitemap"><span>Categories</span></a>
             <ul>
               <% Category.all.each do |cat| %>
                 <li><%= link_to cat.name, "/categories/#{cat.slug}" %></li>
