@@ -1,0 +1,12 @@
+table
+  thead
+    tr
+      th width="200" Title
+      th Content
+      th width="150" Action
+  tbody
+    - @category.posts.each do |post|
+      tr
+        td = post.title
+        td = strip_tags(post.body).truncate(200)
+        td = link_to "Edit", edit_admin_post_path(post)

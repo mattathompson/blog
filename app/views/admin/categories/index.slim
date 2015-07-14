@@ -1,0 +1,4 @@
+dl
+  - @categories.each do |cat|
+    dt = link_to cat.name, admin_category_path(cat)
+    dd = cat.description

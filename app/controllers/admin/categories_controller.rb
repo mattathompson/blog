@@ -32,3 +32,4 @@ class Admin::CategoriesController < ApplicationController
   def category_params
     params[:category].permit(:name, :description)
   end
+end
