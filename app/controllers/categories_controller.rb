@@ -4,7 +4,6 @@ class CategoriesController < ApplicationController
     @category = Category.friendly.find params[:id]
   end
 
-
   def index
     @categories = Category.all
   end
