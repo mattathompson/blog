@@ -17,6 +17,7 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
+      binding.pry
       redirect_to admin_category_path(@category)
     else
       redirect_to :back, notice: "Sorry love, Something went wrong."

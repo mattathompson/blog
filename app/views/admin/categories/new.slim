@@ -2,7 +2,7 @@
   br
   br
   h1 Create New Category
-  = form_for(@category) do |f|
+  = form_for([:admin, @category]) do |f|
     .row
       .large-6.columns.small-12
         =f.label :name

@@ -9,4 +9,8 @@ class StaticPagesController < ApplicationController
   def show
     @post = Post.friendly.find params[:id]
   end
+
+  def posts
+    @posts = Post.all
+  end
 end
