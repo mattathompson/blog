@@ -1,0 +1,29 @@
+.small-12.medium-8.columns.small-centered.medium-centered
+  br
+  br
+  h1 Edit Category
+  = form_for([:admin, @category]) do |f|
+    .row
+      .large-6.columns.small-12
+        =f.label :name
+        =f.text_field :name
+
+    =f.label :description
+    =f.text_area :description, rows: "8", class: "tinymce"
+
+    =f.submit "Create Category"
+br
+br
+
+javascript:
+  $("document:ready", function() {
+    $(".tinymce").tinymce({
+      theme: "modern",
+      toolbar: "bold,italic,underline,|,bullist,numlist,outdent,indent,|,undo,redo,|,pastetext,pasteword,selectall,|,link,code",
+      pagebreak_separator: "<p class='page-separator'>&nbsp;</p>",
+      plugins: ["link", "code"],
+      uploadimage_form_url: "/tinymce_assets",
+      relative_urls: false,
+      remove_script_host: false
+    })
+  });
