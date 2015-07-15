@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+
   layout 'public'
   def show
     @category = Category.friendly.find params[:id]
@@ -7,5 +8,8 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
   end
+
+
+  private
 
 end

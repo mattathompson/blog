@@ -1,0 +1,37 @@
+
+
+<div id="main-wrapper">
+  <div id="main" class="container">
+    <div class="row">
+      <!-- Content -->
+        <div id="content" class="12u 12u(mobile)">
+          <h2><%= @category.name %></h2>
+          <h5><%= @category.description%></h5>
+
+
+          <!-- Post -->
+          <% @category.posts.each do |post| %>
+            <article class="post box" style="box-shadow: none;">
+              <header>
+                <h2><a href="#"><%= post.title%></a></h2>
+              </header>
+              <a href="#" class="image featured"><%= image_tag post.main_image %></a>
+              <h3><%= post.pub_date %></h3>
+              <%= post.body %>
+              <ul class="actions">
+                <li><a href="#" class="button icon fa-file">Continue Reading</a></li>
+              </ul>
+            </article>
+          <% end %>
+          <% if @posts.nil? %>
+            <br />
+            <br />
+            <hr />
+            <h2>Posts Comming Soon!</h2>
+          <% end %>
+        <!-- Sidebar -->
+
+
+    </div>
+  </div>
+</div>

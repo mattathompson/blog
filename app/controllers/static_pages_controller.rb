@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_action :find_sidebar
+
   layout 'public'
 
   def home
@@ -12,5 +14,11 @@ class StaticPagesController < ApplicationController
 
   def posts
     @posts = Post.all
+  end
+
+  private
+
+  def find_sidebar
+    @sidebar_posts  = Post.sidebar
   end
 end

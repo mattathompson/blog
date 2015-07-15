@@ -1,15 +1,22 @@
-<div id="main-wrapper">
-  <div id="main" class="container">
-    <div class="row">
-      <article class="post box" style="box-shadow: none;">
-        <header>
-          <h2><%= @post.title %></h2>
-        </header>
-        <a href="#" class="image featured"><%= image_tag @post.main_image.url %></a>
-        <%= simple_format(@post.body) %>
-        <hr />
-        <h5><%= @post.tags %></h5>
-      </article>
-    </div>
-  </div>
-</div>
+      <div id="main-wrapper">
+        <div id="main" class="container">
+          <div class="row">
+          <!-- Content -->
+            <div id="content" class="8u 12u(mobile)">
+              <!-- Post -->
+              <article class="post box" style="box-shadow: none;">
+                <header>
+                  <h2><%= @post.title %></h2>
+                </header>
+                <a href="#" class="image featured"><%= image_tag @post.main_image.url %></a>
+                <%= simple_format(@post.body) %>
+                <hr />
+                <h5><%= @post.tags %></h5>
+              </article>
+            </>
+            <div id="sidebar" class="4u 12u(mobile)">
+              <%= render 'sidebar' %>
+            </div>
+          </div>
+        </div>
+      </div>
