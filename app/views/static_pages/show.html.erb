@@ -1,6 +1,10 @@
 <script type="text/javascript">
-  $("#content-body span").contents().unwrap();
+  var content = $("#content-body").childrend();
+  $.each( content, function(i, val){
+    $(val).children('span').contents().unwrap();
+  });
 </script>
+
 <% title @post.title %>
 <div id="main-wrapper">
   <div id="main" class="container">
