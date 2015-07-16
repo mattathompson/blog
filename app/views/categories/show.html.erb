@@ -7,8 +7,9 @@
         <div id="content" class="12u 12u(mobile)">
           <h2><%= @category.name %></h2>
           <h5><%= simple_format(@category.description)%></h5>
+        </div>
 
-
+        <div id="content" class="8u 12u(mobile)">
           <!-- Post -->
           <% @category.posts.each do |post| %>
             <article class="post box" style="box-shadow: none;">
@@ -23,7 +24,11 @@
               </ul>
             </article>
           <% end %>
-          <% if @posts.nil? %>
+        </div>
+        <div id="sidebar" class="4u 12u(mobile)">
+          <%= render 'sidebar' %>
+        </div>
+          <% if @Category.posts.nil? %>
             <br />
             <br />
             <hr />
