@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :find_sidebar
 
   layout 'public'
   def show
@@ -11,5 +12,9 @@ class CategoriesController < ApplicationController
 
 
   private
+
+  def find_sidebar
+    @sidebar_posts  = Post.sidebar
+  end
 
 end
