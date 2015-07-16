@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  var content = $("#content-body").childrend();
+  var content = $("#content-body").children();
   $.each( content, function(i, val){
     $(val).children('span').contents().unwrap();
   });
