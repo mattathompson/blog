@@ -6,7 +6,7 @@
       <!-- Content -->
         <div id="content" class="12u 12u(mobile)">
           <h2><%= @category.name %></h2>
-          <h5><%= @category.description%></h5>
+          <h5><%= simple_format(@category.description)%></h5>
 
 
           <!-- Post -->
@@ -17,7 +17,7 @@
               </header>
               <a href="#" class="image featured"><%= image_tag post.main_image %></a>
               <h3><%= post.pub_date %></h3>
-              <%= simple_format(post.body) %>
+              <%= strip_tags(post.body).truncate(200) %>
               <ul class="actions">
                 <li><a href="#" class="button icon fa-file">Continue Reading</a></li>
               </ul>
