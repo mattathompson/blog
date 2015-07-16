@@ -1,8 +1,10 @@
 <script type="text/javascript">
-  var content = $("#content-body").children();
-  $.each( content, function(i, val){
-    $(val).children('span').contents().unwrap();
+  $(document).ready(function(){
+    $.each( $("#content-body").children(), function(i, val){
+      $(val).children('span').contents().unwrap();
+    });
   });
+
 </script>
 
 <% title @post.title %>
