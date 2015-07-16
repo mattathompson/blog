@@ -1,22 +1,25 @@
-      <div id="main-wrapper">
-        <div id="main" class="container">
-          <div class="row">
-          <!-- Content -->
-            <div id="content" class="8u 12u(mobile)">
-              <!-- Post -->
-              <article class="post box" style="box-shadow: none;">
-                <header>
-                  <h2><%= @post.title %></h2>
-                </header>
-                <a href="#" class="image featured"><%= image_tag @post.main_image.url %></a>
-                <%= simple_format(@post.body) %>
-                <hr />
-                <h5><%= @post.tags %></h5>
-              </article>
-            </div>
-            <div id="sidebar" class="4u 12u(mobile)">
-              <%= render 'sidebar' %>
-            </div>
-          </div>
-        </div>
+<% title @post.title %>
+<div id="main-wrapper">
+  <div id="main" class="container">
+    <div class="row">
+    <!-- Content -->
+      <div id="content" class="8u 12u(mobile)">
+        <!-- Post -->
+        <article class="post box" style="box-shadow: none;">
+          <header>
+            <h2 style="display: inline;"><%= @post.title %></h2>
+            <span style="float: right"><a href="https://twitter.com/share" class="twitter-share-button" data-via="ThreePeas_Blog">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></span>
+          </header>
+          <a href="#" class="image featured"><%= image_tag @post.main_image.url %></a>
+          <%= simple_format(@post.body) %>
+          <hr />
+          <h5><%= @post.tags %></h5>
+        </article>
       </div>
+      <div id="sidebar" class="4u 12u(mobile)">
+        <%= render 'sidebar' %>
+      </div>
+    </div>
+  </div>
+</div>
