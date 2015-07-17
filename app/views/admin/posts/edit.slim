@@ -53,9 +53,12 @@ javascript:
       theme: "modern",
       toolbar: "bold,italic,underline,|,bullist,numlist,outdent,indent,|,undo,redo,|,pastetext,pasteword,selectall,|,link,code",
       pagebreak_separator: "<p class='page-separator'>&nbsp;</p>",
-      plugins: ["link", "code"],
+      plugins: ["link", "code", "paste"],
       uploadimage_form_url: "/tinymce_assets",
       relative_urls: false,
-      remove_script_host: false
+      remove_script_host: false,
+      oninit : "setPlainText"
     })
+
+
   });

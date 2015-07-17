@@ -1,3 +1,5 @@
+
+
 .small-12.medium-8.columns.small-centered.medium-centered
   br
   br
@@ -46,17 +48,14 @@
 
 javascript:
   $("document:ready", function() {
-
     $(".tinymce").tinymce({
       theme: "modern",
-      toolbar: "bold,italic,underline,|,bullist,numlist,outdent,indent,|,undo,redo,|,pastetext,pasteword,selectall,|,link",
+      toolbar: "bold,italic,underline,|,bullist,numlist,outdent,indent,|,undo,redo,|,pastetext,pasteword,selectall,|,link,code",
       pagebreak_separator: "<p class='page-separator'>&nbsp;</p>",
-      plugins: ["link"],
+      plugins: ["link", "code", "paste"],
       uploadimage_form_url: "/tinymce_assets",
       relative_urls: false,
       remove_script_host: false,
-      force_p_newlines : false,
-      force_br_newlines : false,
-      keep_styles: false
+      oninit : "setPlainText"
     })
   });

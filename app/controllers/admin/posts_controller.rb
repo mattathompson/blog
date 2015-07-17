@@ -16,7 +16,7 @@ class Admin::PostsController < ApplicationController
     if @post.save
       redirect_to [:admin, @post]
     else
-      redirect_to new_post_path, notice: @post.errors
+      redirect_to :back, notice: @post.errors
     end
   end
 
@@ -25,7 +25,7 @@ class Admin::PostsController < ApplicationController
     if @post.save
       redirect_to [:admin, @post]
     else
-      redirect_to new_post_path, notice: @post.errors
+      redirect_to :back, notice: @post.errors
     end
   end
 
