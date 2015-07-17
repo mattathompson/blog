@@ -1,5 +1,6 @@
 class Admin::TinymceAssetsController < ApplicationController
   respond_to :json
+  skip_before_filter :track_action
 
   def create
     image = Image.new attachment: image_params["file"].tempfile

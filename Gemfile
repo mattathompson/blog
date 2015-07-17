@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'foundation-rails', '5.5.0.0'
+gem 'ahoy_matey'
 # gem 'sass', '~> 3.3.14'
 gem 'devise', '~> 3.4.1'
 gem 'cancancan'

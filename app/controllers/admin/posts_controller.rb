@@ -1,4 +1,5 @@
 class Admin::PostsController < ApplicationController
+  skip_before_filter :track_action
   layout 'application'
   before_action :authenticate_user!
   def index

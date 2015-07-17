@@ -1,5 +1,5 @@
 class Admin::CategoriesController < ApplicationController
-
+skip_before_filter :track_action
   def show
     @category = Category.friendly.find params[:id]
   end
