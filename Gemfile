@@ -33,6 +33,7 @@ gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'aws-sdk', '< 2.0'
 gem 'figaro'
 gem 'pg'
+gem 'pry-rails'
 
 
 group :production do
@@ -49,7 +50,6 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'pry-rails'
   gem 'capybara'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'better_errors'
