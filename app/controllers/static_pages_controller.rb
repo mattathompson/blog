@@ -10,6 +10,7 @@ class StaticPagesController < ApplicationController
 
   def show
     @post = Post.friendly.find params[:id]
+    ahoy.track "Viewed book", title: @post.title
   end
 
   def posts

@@ -11,7 +11,7 @@
 
         <div id="content" class="8u 12u(mobile)">
           <!-- Post -->
-          <% @category.posts.each do |post| %>
+          <% @category.posts.order(:created_at).each do |post| %>
             <article class="post box" style="box-shadow: none;">
               <header>
                 <h2><a href="#"><%= post.title%></a></h2>
